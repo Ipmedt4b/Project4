@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        
+        android:src="@drawable/book_small" />
+
+    <TextView
+        android:id="@+id/txtLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="100+ Management Models gives a quick overview of the key features and potential applications of each of the most important models in nine different categories: sustainability, innovation, strategy, diversity, customers,"
+        android:textColor="@color/list_item_title"
+        android:textColorHint="@android:color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtLabel"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="5dp"
+        android:text="human resources, benchmarking, leadership and implementation. At the end of each section, there is a summary of the key dilemmas that tend to emerge from the particular function, along with analysis of potential solutions."
+        android:textColor="@color/list_item_title"
+        android:textColorHint="@android:color/white"
+        android:textSize="15dp" />
+
+    <ImageButton
+        android:id="@+id/buyBookButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
+        android:src="@drawable/button" />
+
+</RelativeLayout>
