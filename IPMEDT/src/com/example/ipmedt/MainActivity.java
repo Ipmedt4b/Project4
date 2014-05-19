@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 			{
 				try
 				{
-					sleep(2000); // foutmelding
+					sleep(2000);
 				}
 				catch(Exception e)
 				{
