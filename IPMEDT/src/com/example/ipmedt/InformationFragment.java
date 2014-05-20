@@ -8,6 +8,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+import com.example.ipmedt.JSONParser;
+
+import com.example.ipmedt.NewProductActivity;
+import com.example.ipmedt.R;
+
+
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.ListActivity;
@@ -43,7 +50,7 @@ import android.widget.TextView;
   
 
     public class MainScreenActivity extends ListActivity {
-     
+    	 
         // Progress Dialog
         private ProgressDialog pDialog;
      
@@ -82,16 +89,16 @@ import android.widget.TextView;
             // launching Edit Product Screen
             lv.setOnItemClickListener(new OnItemClickListener() {
      
-                private Intent in;
-
-				@Override
+                @Override
                 public void onItemClick(AdapterView<?> parent, View view,
                         int position, long id) {
                     // getting values from selected ListItem
                     String pid = ((TextView) view.findViewById(R.id.pid)).getText()
                             .toString();
      
-                   
+                    // Starting new intent
+                    Intent in = new Intent(getApplicationContext(),
+                            EditProductActivity.class);
                     // sending pid to next activity
                     in.putExtra(TAG_PID, pid);
      
@@ -217,8 +224,4 @@ import android.widget.TextView;
      
         }
     }
-    
-    
-    
-    
-}
+ }

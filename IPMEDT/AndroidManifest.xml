@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
                
-       
+       <activity android:name=".New" />
         <activity
             android:name="com.example.ipmedt.Information_Fragment"
             android:screenOrientation="portrait">            
