@@ -1,12 +1,10 @@
 package com.example.ipmedt;
-<<<<<<< HEAD
+
 //
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
-=======
 
->>>>>>> refs/remotes/origin/Thierry
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

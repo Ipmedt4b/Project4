@@ -22,8 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-=======
+
         
              <activity
             android:name="com.example.ipmedt.Main"
@@ -41,7 +40,7 @@
         </activity>
         
         
->>>>>>> refs/remotes/origin/Thierry
+
     </application>
 
 </manifest>
