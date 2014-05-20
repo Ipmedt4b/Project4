@@ -22,6 +22,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+
+        
+             <activity
+            android:name="com.example.ipmedt.Main"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+               
+       <activity android:name=".New" />
+        <activity
+            android:name="com.example.ipmedt.Information_Fragment"
+            android:screenOrientation="portrait">            
+        </activity>
+        
+        
+
+>>>>>>> 5b593f39ad601175a958b7d18c9293fc22c5e790
     </application>
 
 </manifest>
