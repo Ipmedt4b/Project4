@@ -26,7 +26,7 @@ public class Main extends Activity {
 
 		setContentView(R.layout.activity_main);
 
-		this.NewPage = (Button)this.findViewById(R.id.close);
+		this.NewPage = (Button)this.findViewById(R.id.button_information);
 
 		this.NewPage.setOnClickListener(new OnClickListener() {
 
@@ -41,10 +41,8 @@ public class Main extends Activity {
 		}
 
 		});
-
 		}
-
-		}
+}
 	
 	
 	

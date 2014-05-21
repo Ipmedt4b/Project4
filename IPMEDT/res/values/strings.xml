@@ -4,5 +4,9 @@
     <string name="app_name">IPMEDT</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="activity_splash_title_line_one">LOADING</string>
+    <string name="activity_splash_title_line_two">SPLASH SCREEN</string>
+    <string name="activity_splash_title_line_three">TUTORIAL</string>
+    <string name="activity_main_made_it">You did it!</string>
 
 </resources>

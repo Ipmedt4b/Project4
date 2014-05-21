@@ -47,14 +47,5 @@
         android:layout_alignRight="@+id/textView1"
         android:text="Buy Book" />
     
-    <Button
-    android:id="@+id/close"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/button_models"
-    android:layout_marginTop="62dp"
-    android:layout_toLeftOf="@+id/button_buy"
-    android:text="First Page" />
-    
 
 </RelativeLayout>
