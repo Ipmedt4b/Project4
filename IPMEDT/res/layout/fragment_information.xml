@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
+    android:layout_height="match_parent"
+    android:background="@layout/gradient" >
+    
+    
 	<ImageButton
 	    android:id="@+id/buyBookButton1"
 	    android:layout_width="wrap_content"
@@ -12,13 +14,22 @@
 	    android:layout_marginBottom="34dp"
 	    android:src="@drawable/button" />
 
-	<TextView
-	    android:id="@+id/textView1"
+	<Button
+	    android:id="@+id/button1"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_alignLeft="@+id/buyBookButton"
+	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentTop="true"
-	    android:layout_marginTop="142dp"
-	    android:text="Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst Tekst " />
+	    android:layout_marginLeft="59dp"
+	    android:layout_marginTop="55dp"
+	    android:text="Button" />
+
+	<ListView
+	    android:id="@android:id/list"
+	    android:layout_width="fill_parent"
+	    android:layout_height="420dp"
+	    android:layout_alignBottom="@+id/buyBookButton1"
+	    android:layout_alignParentLeft="true" >
+	</ListView>
 
 </RelativeLayout>
