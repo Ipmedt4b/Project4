@@ -3,33 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@layout/gradient" >
-    
-    
-	<ImageButton
-	    android:id="@+id/buyBookButton1"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentBottom="true"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginBottom="34dp"
-	    android:src="@drawable/button" />
 
-	<Button
-	    android:id="@+id/button1"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentLeft="true"
-	    android:layout_alignParentTop="true"
-	    android:layout_marginLeft="59dp"
-	    android:layout_marginTop="55dp"
-	    android:text="Button" />
-
-	<ListView
-	    android:id="@android:id/list"
-	    android:layout_width="fill_parent"
-	    android:layout_height="420dp"
-	    android:layout_alignBottom="@+id/buyBookButton1"
-	    android:layout_alignParentLeft="true" >
-	</ListView>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="113dp"
+        android:layout_marginTop="85dp"
+        android:text="TextView" />
 
 </RelativeLayout>

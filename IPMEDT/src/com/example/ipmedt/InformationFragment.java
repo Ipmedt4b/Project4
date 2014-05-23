@@ -3,61 +3,74 @@ package com.example.ipmedt;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
- 
+
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
+import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
  
 public class InformationFragment extends ListActivity {
- 
+	
+	
+	
+	 
     // Progress Dialog
     private ProgressDialog pDialog;
-    public static int modelID;
+   
     
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
  
-    ArrayList<HashMap<String, String>> modelList;
+    ArrayList<HashMap<String, String>> informationList;
  
     // url to get all products list
-    private static String url_all_models = "http://www.jellescheer.nl/williebrordardus/get_all_products.php";
+    private static String url_all_info = "http://www.jellescheer.nl/williebrordardus/get_all_information.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
-    private static final String TAG_OPDRACHTGEVERS = "opdrachtgevers";
+    private static final String TAG_informationpage = "informationpage";
     private static final String TAG_PID = "pid";
-    private static final String TAG_NAAM = "naam";
-    private static final String TAG_LOGO = "logo";
+    private static final String TAG_INFO = "info";
+    private static final String TAG_AFB = "afb";
     
  
     // products JSONArray
-    JSONArray models = null;
+    JSONArray information = null;
  
-    @Override
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.models);
+        
+               
+        
  
         // Hashmap for ListView
-        modelList = new ArrayList<HashMap<String, String>>();
+        informationList = new ArrayList<HashMap<String, String>>();
  
         // Loading products in Background Thread
-        new LoadAllModels().execute();
+        new LoadAllInfo().execute();
  
 //         Get listview
         ListView lv = getListView();
@@ -72,48 +85,7 @@ public class InformationFragment extends ListActivity {
                  //getting values from selected ListItem
                  //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
 
-             	switch (position)
-             	{
-             	case 0:
-             		modelID = 1;
-             		Intent model1 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model1);
-             		break;
-             	case 1:
-             		modelID = 2;
-             		Intent model2 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model2);
-             		break;
-             	case 2:
-             		modelID = 3;
-             		Intent model3 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model3);
-             		break;
-             	case 3:
-             		modelID = 4;
-             		Intent model4 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model4);;
-             	case 4:
-             		modelID = 5;
-             		Intent model5 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model5);
-             		break;
-             	case 5:
-             		modelID = 6;
-             		Intent model6 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model6);
-             		break;
-             	case 6:
-             		modelID = 7;
-             		Intent model7 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model7);
-             		break;
-             	case 7:
-             		modelID = 8;
-             		Intent model8 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model8);
-             		break;
-             	}
+             	
            
             }
         });
@@ -139,7 +111,7 @@ public class InformationFragment extends ListActivity {
     /**
      * Background Async Task to Load all product by making HTTP Request
      * */
-    class LoadAllModels extends AsyncTask<String, String, String> {
+    class LoadAllInfo extends AsyncTask<String, String, String> {
  
         /**
          * Before starting background thread Show Progress Dialog
@@ -148,7 +120,7 @@ public class InformationFragment extends ListActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(InformationFragment.this);
-            pDialog.setMessage("Loading Models. Please wait...");
+            pDialog.setMessage("Loading Information. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -161,10 +133,10 @@ public class InformationFragment extends ListActivity {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_models, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(url_all_info, "GET", params);
  
             // Check your log cat for JSON reponse
-            Log.d("All Models: ", json.toString());
+            Log.d("All Info: ", json.toString());
  
             try {
                 // Checking for SUCCESS TAG
@@ -173,27 +145,27 @@ public class InformationFragment extends ListActivity {
                 if (success == 1) {
                     // products found
                     // Getting Array of Products
-                    models = json.getJSONArray(TAG_OPDRACHTGEVERS);
+                    information = json.getJSONArray(TAG_informationpage);
  
                     // looping through All Products
-                    for (int i = 0; i < models.length(); i++) {
-                        JSONObject c = models.getJSONObject(i);
+                    for (int i = 0; i < information.length(); i++) {
+                        JSONObject c = information.getJSONObject(i);
  
                         // Storing each json item in variable
                         String id = c.getString(TAG_PID);
-                        String naam = c.getString(TAG_NAAM);
-                        String logo = c.getString(TAG_LOGO);
+                        String info = c.getString(TAG_INFO);
+                        String afb = c.getString(TAG_AFB);
  
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
  
                         // adding each child node to HashMap key => value
                         map.put(TAG_PID, id);
-                        map.put(TAG_NAAM, naam);
-                        map.put(TAG_LOGO, logo);
+                        map.put(TAG_INFO, info);
+                        map.put(TAG_AFB, afb);
  
                         // adding HashList to ArrayList
-                        modelList.add(map);
+                        informationList.add(map);
                     }
                 }}
                     
@@ -217,10 +189,10 @@ public class InformationFragment extends ListActivity {
                      * Updating parsed JSON data into ListViews
                      * */
                     ListAdapter adapter = new SimpleAdapter(
-                            InformationFragment.this, modelList,
-                            R.layout.model_list, new String[] {TAG_PID,
-                                    TAG_NAAM, TAG_LOGO},
-                            new int[] { R.id.pid, R.id.naam, R.id.logo });
+                            InformationFragment.this, informationList,
+                            R.layout.info_list, new String[] {TAG_PID,
+                                    TAG_INFO, TAG_AFB},
+                            new int[] { R.id.pid, R.id.info, R.id.afb });
                     // updating listview
                     setListAdapter(adapter);
                 }

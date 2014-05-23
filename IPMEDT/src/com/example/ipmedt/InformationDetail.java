@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DetailModel extends Activity
+public class InformationDetail extends Activity
 {	
 	public TextView detailinformatie;
 	int modelID;
@@ -24,8 +24,7 @@ public class DetailModel extends Activity
 	{
 		if (SeModelFragment.modelID == 1)
 			{
-			Intent model1 = new Intent(getApplicationContext(), Sustainability.class);
-     		startActivity(model1);
+		 		detailinformatie.setText("model voor A");
 			}
 		if (SeModelFragment.modelID == 2)
 			{
@@ -49,11 +48,11 @@ public class DetailModel extends Activity
 			}
 		if (SeModelFragment.modelID == 7)
 			{
-		 		detailinformatie.setText("model voor G");
+		 		detailinformatie.setText("Opdrachtgever voor G");
 			}
 		if (SeModelFragment.modelID == 8)
 			{
-	     		detailinformatie.setText("model voor H");
+	     		detailinformatie.setText("Opdrachtgever voor H");
 			}
 		
 	}
