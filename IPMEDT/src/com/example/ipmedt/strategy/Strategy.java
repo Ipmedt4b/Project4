@@ -1,76 +1,69 @@
-package com.example.ipmedt;
+package com.example.ipmedt.strategy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+ 
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.Activity;
+import com.example.ipmedt.JSONParser;
+import com.example.ipmedt.R;
+import com.example.ipmedt.R.id;
+import com.example.ipmedt.R.layout;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemClickListener;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.TextView;
  
-public class InformationFragment extends ListActivity {
-	
-	
-	
-	 
+public class Strategy extends ListActivity {
+ 
     // Progress Dialog
     private ProgressDialog pDialog;
-   
+    public static int strategynamesID;
     
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
  
-    ArrayList<HashMap<String, String>> informationList;
+    ArrayList<HashMap<String, String>> strategynamesList;
  
     // url to get all products list
-    private static String url_all_info = "http://www.jellescheer.nl/williebrordardus/get_all_information.php";
+    private static String url_all_strategynames = "http://jellescheer.nl/williebrordardus/get_all_strategynames.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
-    private static final String TAG_informationpage = "informationpage";
+    private static final String TAG_NAMESSTRATEGY = "namesstrategy";
     private static final String TAG_PID = "pid";
-    private static final String TAG_INFO = "info";
+    private static final String TAG_MODELLEN = "modellen";
+  
     
     
  
     // products JSONArray
-    JSONArray information = null;
+    JSONArray strategynames = null;
  
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	@Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.models);
-        
-               
-        
  
         // Hashmap for ListView
-        informationList = new ArrayList<HashMap<String, String>>();
+        strategynamesList = new ArrayList<HashMap<String, String>>();
  
         // Loading products in Background Thread
-        new LoadAllInfo().execute();
+        new LoadAllstrategynames().execute();
  
 //         Get listview
         ListView lv = getListView();
@@ -85,8 +78,55 @@ public class InformationFragment extends ListActivity {
                  //getting values from selected ListItem
                  //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
 
+             	switch (position)
+             	{
+             	case 0:
+             		strategynamesID = 1;
+             		Intent strategyname1 = new Intent(getApplicationContext(), Strategy_model1.class);
+             		startActivity(strategyname1);
+             		break;
+             	case 1:
+             		strategynamesID = 2;
+             		Intent strategyname2 = new Intent(getApplicationContext(), Strategy_model2.class);
+             		startActivity(strategyname2);
+             		break;
+             	case 2:
+             		strategynamesID = 3;
+             		Intent strategyname3 = new Intent(getApplicationContext(), Strategy_model3.class);
+             		startActivity(strategyname3);
+             		break;
+             	case 3:
+             		strategynamesID = 4;
+             		Intent strategyname4 = new Intent(getApplicationContext(), Strategy_model4.class);
+             		startActivity(strategyname4);
+             		break;
+             	case 4:
+             		strategynamesID = 5;
+             		Intent strategyname5 = new Intent(getApplicationContext(), Strategy_model5.class);
+             		startActivity(strategyname5);
+             		break;
+             	case 5:
+             		strategynamesID = 6;
+             		Intent strategyname6 = new Intent(getApplicationContext(), Strategy_model6.class);
+             		startActivity(strategyname6);
+             		break;
+             	case 6:
+             		strategynamesID = 7;
+             		Intent strategyname7 = new Intent(getApplicationContext(), Strategy_model7.class);
+             		startActivity(strategyname7);
+             		break;
+             	case 7:
+             		strategynamesID = 8;
+             		Intent strategyname8 = new Intent(getApplicationContext(), Strategy_model8.class);
+             		startActivity(strategyname8);
+             		break;
+             	case 8:
+             		strategynamesID = 9;
+             		Intent strategyname9 = new Intent(getApplicationContext(), Strategy_model9.class);
+             		startActivity(strategyname9);
+             		break;
              	
-           
+             	}
             }
         });
  
@@ -111,7 +151,7 @@ public class InformationFragment extends ListActivity {
     /**
      * Background Async Task to Load all product by making HTTP Request
      * */
-    class LoadAllInfo extends AsyncTask<String, String, String> {
+    class LoadAllstrategynames extends AsyncTask<String, String, String> {
  
         /**
          * Before starting background thread Show Progress Dialog
@@ -119,8 +159,8 @@ public class InformationFragment extends ListActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(InformationFragment.this);
-            pDialog.setMessage("Loading Information. Please wait...");
+            pDialog = new ProgressDialog(Strategy.this);
+            pDialog.setMessage("Loading strategy models. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -133,10 +173,10 @@ public class InformationFragment extends ListActivity {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_info, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(url_all_strategynames, "GET", params);
  
             // Check your log cat for JSON reponse
-            Log.d("All Info: ", json.toString());
+            Log.d("All strategy: ", json.toString());
  
             try {
                 // Checking for SUCCESS TAG
@@ -145,27 +185,27 @@ public class InformationFragment extends ListActivity {
                 if (success == 1) {
                     // products found
                     // Getting Array of Products
-                    information = json.getJSONArray(TAG_informationpage);
+                	strategynames = json.getJSONArray(TAG_NAMESSTRATEGY);
  
                     // looping through All Products
-                    for (int i = 0; i < information.length(); i++) {
-                        JSONObject c = information.getJSONObject(i);
+                    for (int i = 0; i < strategynames.length(); i++) {
+                        JSONObject c = strategynames.getJSONObject(i);
  
                         // Storing each json item in variable
                         String id = c.getString(TAG_PID);
-                        String info = c.getString(TAG_INFO);
-                       
+                        String naam = c.getString(TAG_MODELLEN);
+                        
  
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
  
                         // adding each child node to HashMap key => value
                         map.put(TAG_PID, id);
-                        map.put(TAG_INFO, info);
+                        map.put(TAG_MODELLEN, naam);
                         
  
                         // adding HashList to ArrayList
-                        informationList.add(map);
+                        strategynamesList.add(map);
                     }
                 }}
                     
@@ -186,13 +226,13 @@ public class InformationFragment extends ListActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
                     /**
-                     * Updating parsed JSON data into ListViews
+                     * Updating parsed JSON data into ListView
                      * */
                     ListAdapter adapter = new SimpleAdapter(
-                            InformationFragment.this, informationList,
-                            R.layout.info_list, new String[] {TAG_PID,
-                                    TAG_INFO},
-                            new int[] { R.id.pid, R.id.info });
+                            Strategy.this, strategynamesList,
+                            R.layout.sustainmodel_list, new String[] {TAG_PID,
+                                    TAG_MODELLEN, },
+                            new int[] { R.id.pid, R.id.naam,});
                     // updating listview
                     setListAdapter(adapter);
                 }

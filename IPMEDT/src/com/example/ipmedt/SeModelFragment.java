@@ -93,7 +93,8 @@ public class SeModelFragment extends ListActivity {
              	case 3:
              		modelID = 4;
              		Intent model4 = new Intent(getApplicationContext(), DetailModel.class);
-             		startActivity(model4);;
+             		startActivity(model4);
+             		break;
              	case 4:
              		modelID = 5;
              		Intent model5 = new Intent(getApplicationContext(), DetailModel.class);
@@ -153,7 +154,7 @@ public class SeModelFragment extends ListActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(SeModelFragment.this);
-            pDialog.setMessage("Loading opdrachtgevers. Please wait...");
+            pDialog.setMessage("Loading Models. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -169,7 +170,7 @@ public class SeModelFragment extends ListActivity {
             JSONObject json = jParser.makeHttpRequest(url_all_models, "GET", params);
  
             // Check your log cat for JSON reponse
-            Log.d("All Opdrachtgevers: ", json.toString());
+            Log.d("All Models: ", json.toString());
  
             try {
                 // Checking for SUCCESS TAG

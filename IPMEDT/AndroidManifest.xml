@@ -24,7 +24,92 @@
         </activity>
         
             <activity android:name="com.example.ipmedt.DetailModel" android:screenOrientation="portrait" />
-            <activity android:name="com.example.ipmedt.Sustainability" android:screenOrientation="portrait" />
+            
+            <activity android:name="com.example.ipmedt.sustainability.Sustainability" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.sustainability.Sustainability_model1" android:screenOrientation="portrait" />
+        	<activity android:name="com.example.ipmedt.sustainability.Sustainability_model2" android:screenOrientation="portrait" />
+        	<activity android:name="com.example.ipmedt.sustainability.Sustainability_model3" android:screenOrientation="portrait" />
+        	<activity android:name="com.example.ipmedt.sustainability.Sustainability_model4" android:screenOrientation="portrait" />
+        	<activity android:name="com.example.ipmedt.sustainability.Sustainability_model5" android:screenOrientation="portrait" />
+        	<activity android:name="com.example.ipmedt.sustainability.Sustainability_model6" android:screenOrientation="portrait" />
+        	<activity android:name="com.example.ipmedt.sustainability.Sustainability_model7" android:screenOrientation="portrait" />
+        	
+        	<activity android:name="com.example.ipmedt.innovation.Innovation" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.innovation.Innovation_model1" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.innovation.Innovation_model2" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.innovation.Innovation_model3" android:screenOrientation="portrait" />
+   			<activity android:name="com.example.ipmedt.innovation.Innovation_model4" android:screenOrientation="portrait" />
+   			<activity android:name="com.example.ipmedt.innovation.Innovation_model5" android:screenOrientation="portrait" />     
+   			<activity android:name="com.example.ipmedt.innovation.Innovation_model6" android:screenOrientation="portrait" />
+   			<activity android:name="com.example.ipmedt.innovation.Innovation_model7" android:screenOrientation="portrait" />
+            
+            <activity android:name="com.example.ipmedt.strategy.Strategy" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.strategy.Strategy_model1" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.strategy.Strategy_model2" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.strategy.Strategy_model3" android:screenOrientation="portrait" />
+			<activity android:name="com.example.ipmedt.strategy.Strategy_model4" android:screenOrientation="portrait" />
+         	<activity android:name="com.example.ipmedt.strategy.Strategy_model5" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.strategy.Strategy_model6" android:screenOrientation="portrait" />
+			<activity android:name="com.example.ipmedt.strategy.Strategy_model7" android:screenOrientation="portrait" />
+			<activity android:name="com.example.ipmedt.strategy.Strategy_model8" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.strategy.Strategy_model9" android:screenOrientation="portrait" />
+            
+            <activity android:name="com.example.ipmedt.diversity.Diversity" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model1" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model2" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model3" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model4" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model5" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model6" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model7" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model8" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model9" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.diversity.Diversity_model10" android:screenOrientation="portrait" />
+            
+            <activity android:name="com.example.ipmedt.customer.Customer" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model1" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model2" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model3" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model4" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model5" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model6" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model7" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model8" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model9" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.customer.Customer_model10" android:screenOrientation="portrait" />
+            
+            <activity android:name="com.example.ipmedt.humanresources.Humanresources" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.humanresources.Humanresources_model1" android:screenOrientation="portrait" />
+      		<activity android:name="com.example.ipmedt.humanresources.Humanresources_model2" android:screenOrientation="portrait" />
+      		<activity android:name="com.example.ipmedt.humanresources.Humanresources_model3" android:screenOrientation="portrait" />
+      		<activity android:name="com.example.ipmedt.humanresources.Humanresources_model4" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.humanresources.Humanresources_model5" android:screenOrientation="portrait" />
+      		<activity android:name="com.example.ipmedt.humanresources.Humanresources_model6" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.humanresources.Humanresources_model7" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.humanresources.Humanresources_model8" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.humanresources.Humanresources_model9" android:screenOrientation="portrait" />
+            
+            <activity android:name="com.example.ipmedt.results.Results" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model1" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model2" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model3" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model4" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model5" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model6" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model7" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.results.Results_model8" android:screenOrientation="portrait" />
+          
+                      
+            <activity android:name="com.example.ipmedt.leadership.Leadership" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.leadership.Leadership_model1" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.leadership.Leadership_model2" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.leadership.Leadership_model3" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.leadership.Leadership_model4" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.leadership.Leadership_model5" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.leadership.Leadership_model6" android:screenOrientation="portrait" />
+   			<activity android:name="com.example.ipmedt.leadership.Leadership_model7" android:screenOrientation="portrait" />
+            <activity android:name="com.example.ipmedt.leadership.Leadership_model8" android:screenOrientation="portrait" />
+            
             
              <activity
             android:name="com.example.ipmedt.Main"

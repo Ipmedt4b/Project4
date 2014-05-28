@@ -1,76 +1,69 @@
-package com.example.ipmedt;
+package com.example.ipmedt.innovation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+ 
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.Activity;
+import com.example.ipmedt.JSONParser;
+import com.example.ipmedt.R;
+import com.example.ipmedt.R.id;
+import com.example.ipmedt.R.layout;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemClickListener;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.TextView;
  
-public class InformationFragment extends ListActivity {
-	
-	
-	
-	 
+public class Innovation extends ListActivity {
+ 
     // Progress Dialog
     private ProgressDialog pDialog;
-   
+    public static int innovationnamesID;
     
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
  
-    ArrayList<HashMap<String, String>> informationList;
+    ArrayList<HashMap<String, String>> innovationnamesList;
  
     // url to get all products list
-    private static String url_all_info = "http://www.jellescheer.nl/williebrordardus/get_all_information.php";
+    private static String url_all_innovationnames = "http://jellescheer.nl/williebrordardus/get_all_innovationnames.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
-    private static final String TAG_informationpage = "informationpage";
+    private static final String TAG_NAMESINNOVATION = "namesinnovation";
     private static final String TAG_PID = "pid";
-    private static final String TAG_INFO = "info";
+    private static final String TAG_MODELLEN = "modellen";
+  
     
     
  
     // products JSONArray
-    JSONArray information = null;
+    JSONArray innovationnames = null;
  
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	@Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.models);
-        
-               
-        
  
         // Hashmap for ListView
-        informationList = new ArrayList<HashMap<String, String>>();
+        innovationnamesList = new ArrayList<HashMap<String, String>>();
  
         // Loading products in Background Thread
-        new LoadAllInfo().execute();
+        new LoadAllinnovationnames().execute();
  
 //         Get listview
         ListView lv = getListView();
@@ -85,8 +78,45 @@ public class InformationFragment extends ListActivity {
                  //getting values from selected ListItem
                  //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
 
+             	switch (position)
+             	{
+             	case 0:
+             		innovationnamesID = 1;
+             		Intent innovationname1 = new Intent(getApplicationContext(), Innovation_model1.class);
+             		startActivity(innovationname1);
+             		break;
+             	case 1:
+             		innovationnamesID = 2;
+             		Intent innovationname2 = new Intent(getApplicationContext(), Innovation_model2.class);
+             		startActivity(innovationname2);
+             		break;
+             	case 2:
+             		innovationnamesID = 3;
+             		Intent innovationname3 = new Intent(getApplicationContext(), Innovation_model3.class);
+             		startActivity(innovationname3);
+             		break;
+             	case 3:
+             		innovationnamesID = 4;
+             		Intent innovationname4 = new Intent(getApplicationContext(), Innovation_model4.class);
+             		startActivity(innovationname4);
+             		break;
+             	case 4:
+             		innovationnamesID = 5;
+             		Intent innovationname5 = new Intent(getApplicationContext(), Innovation_model5.class);
+             		startActivity(innovationname5);
+             		break;
+             	case 5:
+             		innovationnamesID = 6;
+             		Intent innovationname6 = new Intent(getApplicationContext(), Innovation_model6.class);
+             		startActivity(innovationname6);
+             		break;
+             	case 6:
+             		innovationnamesID = 7;
+             		Intent innovationname7 = new Intent(getApplicationContext(), Innovation_model7.class);
+             		startActivity(innovationname7);
+             		break;
              	
-           
+             	}
             }
         });
  
@@ -111,7 +141,7 @@ public class InformationFragment extends ListActivity {
     /**
      * Background Async Task to Load all product by making HTTP Request
      * */
-    class LoadAllInfo extends AsyncTask<String, String, String> {
+    class LoadAllinnovationnames extends AsyncTask<String, String, String> {
  
         /**
          * Before starting background thread Show Progress Dialog
@@ -119,8 +149,8 @@ public class InformationFragment extends ListActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(InformationFragment.this);
-            pDialog.setMessage("Loading Information. Please wait...");
+            pDialog = new ProgressDialog(Innovation.this);
+            pDialog.setMessage("Loading innovation models. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -133,10 +163,10 @@ public class InformationFragment extends ListActivity {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_info, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(url_all_innovationnames, "GET", params);
  
             // Check your log cat for JSON reponse
-            Log.d("All Info: ", json.toString());
+            Log.d("All innovation: ", json.toString());
  
             try {
                 // Checking for SUCCESS TAG
@@ -145,27 +175,27 @@ public class InformationFragment extends ListActivity {
                 if (success == 1) {
                     // products found
                     // Getting Array of Products
-                    information = json.getJSONArray(TAG_informationpage);
+                	innovationnames = json.getJSONArray(TAG_NAMESINNOVATION);
  
                     // looping through All Products
-                    for (int i = 0; i < information.length(); i++) {
-                        JSONObject c = information.getJSONObject(i);
+                    for (int i = 0; i < innovationnames.length(); i++) {
+                        JSONObject c = innovationnames.getJSONObject(i);
  
                         // Storing each json item in variable
                         String id = c.getString(TAG_PID);
-                        String info = c.getString(TAG_INFO);
-                       
+                        String naam = c.getString(TAG_MODELLEN);
+                        
  
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
  
                         // adding each child node to HashMap key => value
                         map.put(TAG_PID, id);
-                        map.put(TAG_INFO, info);
+                        map.put(TAG_MODELLEN, naam);
                         
  
                         // adding HashList to ArrayList
-                        informationList.add(map);
+                        innovationnamesList.add(map);
                     }
                 }}
                     
@@ -186,13 +216,13 @@ public class InformationFragment extends ListActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
                     /**
-                     * Updating parsed JSON data into ListViews
+                     * Updating parsed JSON data into ListView
                      * */
                     ListAdapter adapter = new SimpleAdapter(
-                            InformationFragment.this, informationList,
-                            R.layout.info_list, new String[] {TAG_PID,
-                                    TAG_INFO},
-                            new int[] { R.id.pid, R.id.info });
+                            Innovation.this, innovationnamesList,
+                            R.layout.sustainmodel_list, new String[] {TAG_PID,
+                                    TAG_MODELLEN, },
+                            new int[] { R.id.pid, R.id.naam,});
                     // updating listview
                     setListAdapter(adapter);
                 }

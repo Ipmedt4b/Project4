@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+     >
+ 
+    <!-- Product id (pid) - will be HIDDEN - used to pass to other activity -->
+    <TextView
+        android:id="@+id/pid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+ 
+    <!-- Name Label -->
+
+    <TextView
+        android:id="@+id/naamsubmodel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:paddingTop="0dip"
+        android:textColor="@color/list_item_title"
+        android:textSize="13dip"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/auteur"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:paddingTop="30dip"
+        android:textColor="@color/list_item_title"
+        android:textSize="13dip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/naamsubbeschrijving"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="6dip"
+        android:paddingTop="65dip"
+        android:textColor="@color/list_item_title"
+        android:textSize="13dip"
+        android:textStyle="bold" />
+ 
+</RelativeLayout>

@@ -1,76 +1,69 @@
-package com.example.ipmedt;
+package com.example.ipmedt.humanresources;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+ 
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.Activity;
+import com.example.ipmedt.JSONParser;
+import com.example.ipmedt.R;
+import com.example.ipmedt.R.id;
+import com.example.ipmedt.R.layout;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemClickListener;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.TextView;
  
-public class InformationFragment extends ListActivity {
-	
-	
-	
-	 
+public class Humanresources extends ListActivity {
+ 
     // Progress Dialog
     private ProgressDialog pDialog;
-   
+    public static int humanresourcesnamesID;
     
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
  
-    ArrayList<HashMap<String, String>> informationList;
+    ArrayList<HashMap<String, String>> humanresourcesnamesList;
  
     // url to get all products list
-    private static String url_all_info = "http://www.jellescheer.nl/williebrordardus/get_all_information.php";
+    private static String url_all_humanresourcesnames = "http://jellescheer.nl/williebrordardus/get_all_humanresourcesnames.php";
  
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
-    private static final String TAG_informationpage = "informationpage";
+    private static final String TAG_NAMESHUMANRESOURCES = "nameshumanresources";
     private static final String TAG_PID = "pid";
-    private static final String TAG_INFO = "info";
+    private static final String TAG_MODELLEN = "modellen";
+  
     
     
  
     // products JSONArray
-    JSONArray information = null;
+    JSONArray humanresourcesnames = null;
  
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	@Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.models);
-        
-               
-        
  
         // Hashmap for ListView
-        informationList = new ArrayList<HashMap<String, String>>();
+        humanresourcesnamesList = new ArrayList<HashMap<String, String>>();
  
         // Loading products in Background Thread
-        new LoadAllInfo().execute();
+        new LoadAllhumanresourcesnames().execute();
  
 //         Get listview
         ListView lv = getListView();
@@ -85,8 +78,55 @@ public class InformationFragment extends ListActivity {
                  //getting values from selected ListItem
                  //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
 
+             	switch (position)
+             	{
+             	case 0:
+             		humanresourcesnamesID = 1;
+             		Intent humanresourcesname1 = new Intent(getApplicationContext(), Humanresources_model1.class);
+             		startActivity(humanresourcesname1);
+             		break;
+             	case 1:
+             		humanresourcesnamesID = 2;
+             		Intent humanresourcesname2 = new Intent(getApplicationContext(), Humanresources_model2.class);
+             		startActivity(humanresourcesname2);
+             		break;
+             	case 2:
+             		humanresourcesnamesID = 3;
+             		Intent humanresourcesname3 = new Intent(getApplicationContext(), Humanresources_model3.class);
+             		startActivity(humanresourcesname3);
+             		break;
+             	case 3:
+             		humanresourcesnamesID = 4;
+             		Intent humanresourcesname4 = new Intent(getApplicationContext(), Humanresources_model4.class);
+             		startActivity(humanresourcesname4);
+             		break;
+             	case 4:
+             		humanresourcesnamesID = 5;
+             		Intent humanresourcesname5 = new Intent(getApplicationContext(), Humanresources_model5.class);
+             		startActivity(humanresourcesname5);
+             		break;
+             	case 5:
+             		humanresourcesnamesID = 6;
+             		Intent humanresourcesname6 = new Intent(getApplicationContext(), Humanresources_model6.class);
+             		startActivity(humanresourcesname6);
+             		break;
+             	case 6:
+             		humanresourcesnamesID = 7;
+             		Intent humanresourcesname7 = new Intent(getApplicationContext(), Humanresources_model7.class);
+             		startActivity(humanresourcesname7);
+             		break;
+             	case 7:
+             		humanresourcesnamesID = 8;
+             		Intent humanresourcesname8 = new Intent(getApplicationContext(), Humanresources_model8.class);
+             		startActivity(humanresourcesname8);
+             		break;
+             	case 8:
+             		humanresourcesnamesID = 9;
+             		Intent humanresourcesname9 = new Intent(getApplicationContext(), Humanresources_model9.class);
+             		startActivity(humanresourcesname9);
+             		break;
              	
-           
+             	}
             }
         });
  
@@ -111,7 +151,7 @@ public class InformationFragment extends ListActivity {
     /**
      * Background Async Task to Load all product by making HTTP Request
      * */
-    class LoadAllInfo extends AsyncTask<String, String, String> {
+    class LoadAllhumanresourcesnames extends AsyncTask<String, String, String> {
  
         /**
          * Before starting background thread Show Progress Dialog
@@ -119,8 +159,8 @@ public class InformationFragment extends ListActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(InformationFragment.this);
-            pDialog.setMessage("Loading Information. Please wait...");
+            pDialog = new ProgressDialog(Humanresources.this);
+            pDialog.setMessage("Loading humanresources models. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -133,10 +173,10 @@ public class InformationFragment extends ListActivity {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_info, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(url_all_humanresourcesnames, "GET", params);
  
             // Check your log cat for JSON reponse
-            Log.d("All Info: ", json.toString());
+            Log.d("All humanresources: ", json.toString());
  
             try {
                 // Checking for SUCCESS TAG
@@ -145,27 +185,27 @@ public class InformationFragment extends ListActivity {
                 if (success == 1) {
                     // products found
                     // Getting Array of Products
-                    information = json.getJSONArray(TAG_informationpage);
+                	humanresourcesnames = json.getJSONArray(TAG_NAMESHUMANRESOURCES);
  
                     // looping through All Products
-                    for (int i = 0; i < information.length(); i++) {
-                        JSONObject c = information.getJSONObject(i);
+                    for (int i = 0; i < humanresourcesnames.length(); i++) {
+                        JSONObject c = humanresourcesnames.getJSONObject(i);
  
                         // Storing each json item in variable
                         String id = c.getString(TAG_PID);
-                        String info = c.getString(TAG_INFO);
-                       
+                        String naam = c.getString(TAG_MODELLEN);
+                        
  
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
  
                         // adding each child node to HashMap key => value
                         map.put(TAG_PID, id);
-                        map.put(TAG_INFO, info);
+                        map.put(TAG_MODELLEN, naam);
                         
  
                         // adding HashList to ArrayList
-                        informationList.add(map);
+                        humanresourcesnamesList.add(map);
                     }
                 }}
                     
@@ -186,13 +226,13 @@ public class InformationFragment extends ListActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
                     /**
-                     * Updating parsed JSON data into ListViews
+                     * Updating parsed JSON data into ListView
                      * */
                     ListAdapter adapter = new SimpleAdapter(
-                            InformationFragment.this, informationList,
-                            R.layout.info_list, new String[] {TAG_PID,
-                                    TAG_INFO},
-                            new int[] { R.id.pid, R.id.info });
+                            Humanresources.this, humanresourcesnamesList,
+                            R.layout.sustainmodel_list, new String[] {TAG_PID,
+                                    TAG_MODELLEN, },
+                            new int[] { R.id.pid, R.id.naam,});
                     // updating listview
                     setListAdapter(adapter);
                 }

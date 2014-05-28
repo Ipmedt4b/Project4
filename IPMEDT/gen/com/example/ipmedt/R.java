@@ -1100,16 +1100,16 @@ containing a value of this type.
         public static final int action_bar_root=0x7f05001a;
         public static final int action_bar_subtitle=0x7f050023;
         public static final int action_bar_title=0x7f050022;
-        public static final int action_book=0x7f050053;
+        public static final int action_book=0x7f050056;
         public static final int action_context_bar=0x7f05001d;
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050052;
+        public static final int action_settings=0x7f050055;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int activity_splash_progress_bar=0x7f050040;
-        public static final int afb=0x7f05004c;
         public static final int always=0x7f05000b;
+        public static final int auteur=0x7f050051;
         public static final int beginning=0x7f050011;
         public static final int btnDelete=0x7f050049;
         public static final int btnSave=0x7f050048;
@@ -1131,19 +1131,20 @@ containing a value of this type.
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
-        public static final int imageButton1=0x7f050051;
         public static final int imageView1=0x7f050041;
         public static final int imageView2=0x7f050044;
-        public static final int info=0x7f05004d;
+        public static final int info=0x7f05004c;
         public static final int inputDesc=0x7f050047;
         public static final int inputName=0x7f050045;
         public static final int inputPrice=0x7f050046;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
-        public static final int logo=0x7f050050;
+        public static final int logo=0x7f05004f;
         public static final int middle=0x7f050012;
-        public static final int naam=0x7f05004f;
-        public static final int name=0x7f05004e;
+        public static final int naam=0x7f05004e;
+        public static final int naamsubbeschrijving=0x7f050052;
+        public static final int naamsubmodel=0x7f050050;
+        public static final int name=0x7f05004d;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
@@ -1167,7 +1168,9 @@ containing a value of this type.
         public static final int showTitle=0x7f050006;
         public static final int spinner1=0x7f05004a;
         public static final int split_action_bar=0x7f05001e;
+        public static final int subbeschrijving=0x7f050054;
         public static final int submit_area=0x7f050039;
+        public static final int submodel=0x7f050053;
         public static final int tabMode=0x7f050002;
         public static final int tableRow1=0x7f050043;
         public static final int textView1=0x7f05003c;
@@ -1243,6 +1246,10 @@ containing a value of this type.
         public static final int models=0x7f030025;
         public static final int support_simple_spinner_dropdown_item=0x7f030026;
         public static final int sustain=0x7f030027;
+        public static final int sustain_list=0x7f030028;
+        public static final int sustainmodel_list=0x7f030029;
+        public static final int sustainmodels=0x7f03002a;
+        public static final int test_list=0x7f03002b;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
