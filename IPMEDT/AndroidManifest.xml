@@ -22,6 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
 
         
             <activity android:name="com.example.ipmedt.DetailModel" android:screenOrientation="portrait" />
@@ -137,6 +139,7 @@
         
         
 
+>>>>>>> 5b593f39ad601175a958b7d18c9293fc22c5e790
     </application>
 
 </manifest>
