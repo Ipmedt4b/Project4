@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@layout/gradient" >
+ 
+    <!-- Product id (pid) - will be HIDDEN - used to pass to other activity -->
+    <TextView
+        android:id="@+id/pid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+ 
+    <!-- Name Label -->
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/book_small" />
+    
+    <ListView
+        android:id="@android:id/list"
+        android:layout_marginTop="60dp"
+        android:layout_width="fill_parent"
+        android:layout_height="420dp" >
+    </ListView>
+
+
+
+    <TextView
+        android:id="@+id/naamsubmodel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:paddingTop="0dip"
+        android:textColor="@color/list_item_title"
+        android:textSize="13dip"
+        android:textStyle="bold" />
+    
+        <TextView
+        android:id="@+id/submodel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:paddingTop="0dip"
+        android:textColor="@color/list_item_title"
+        android:textSize="13dip"
+        android:textStyle="bold" />
+        
+            <TextView
+        android:id="@+id/subbeschrijving"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:paddingTop="0dip"
+        android:textColor="@color/list_item_title"
+        android:textSize="13dip"
+        android:textStyle="bold" />
+            
+            
+ 
+</LinearLayout>
