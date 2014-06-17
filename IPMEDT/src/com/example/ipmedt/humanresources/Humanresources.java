@@ -77,7 +77,7 @@ public class Humanresources extends ListActivity {
             {
                  //getting values from selected ListItem
                  //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
-
+            	// linkt naar de juiste pagina van het model
              	switch (position)
              	{
              	case 0:

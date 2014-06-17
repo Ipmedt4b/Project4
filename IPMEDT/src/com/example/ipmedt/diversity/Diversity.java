@@ -77,7 +77,7 @@ public class Diversity extends ListActivity {
             {
                  //getting values from selected ListItem
                  //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
-
+            	// stuurt je naar de juiste pagina van de modellen
              	switch (position)
              	{
              	case 0:

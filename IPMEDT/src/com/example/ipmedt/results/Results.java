@@ -77,7 +77,7 @@ public class Results extends ListActivity {
             {
                  //getting values from selected ListItem
                  //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
-
+            	// link naar juiste model pagina
              	switch (position)
              	{
              	case 0:
