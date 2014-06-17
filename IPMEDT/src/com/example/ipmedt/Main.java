@@ -44,7 +44,10 @@ public class Main extends Activity {
 			}
 		});
 		//de knop om het boek te kopen
-		book = (Button) findViewById(R.id.button_buy);
+
+		
+		book = (Button) findViewById(R.id.button_sales);
+
 		book.setOnClickListener(new OnClickListener() 
 		{
 			@Override

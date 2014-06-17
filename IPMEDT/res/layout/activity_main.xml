@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,48 +10,62 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ipmedt.MainActivity$PlaceholderFragment" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:text="100+ Management Models "
-        android:textColor="@color/list_item_title"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="100+ Management Models "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/list_item_title" />
 
-    <Button
-        android:id="@+id/button_information"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="16dp"
-        android:textColor="@color/list_item_title"
-        android:layout_marginTop="47dp"
-        android:text="Information" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logohsl" />
 
-    <Button
-        android:id="@+id/button_models"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/list_item_title"
-        android:layout_alignLeft="@+id/button_information"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="18dp"
-        android:text="Models" />
+        <Button
+            android:id="@+id/button_sales"
+            android:layout_width="230dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/button_information"
+            android:layout_marginTop="21dp"
+            android:layout_below="@+id/button_models"
+            android:background="#23114c"
+            android:text="Sale"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/button_buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/list_item_title"
-        android:layout_alignBaseline="@+id/button_information"
-        android:layout_alignBottom="@+id/button_information"
-        android:layout_alignRight="@+id/textView1"
-        android:text="Buy Book" />
-    
+        <Button
+            android:id="@+id/button_models"
+            android:layout_width="230dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/button_information"
+            android:layout_below="@+id/button_information"
+            android:layout_marginTop="21dp"
+            android:background="#23114c"
+            android:text="Models"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/button_information"
+            android:layout_width="230dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:background="#23114c"
+            android:text="Information"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="25sp" />
 
 </RelativeLayout>
 
