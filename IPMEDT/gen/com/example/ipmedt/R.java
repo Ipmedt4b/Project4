@@ -7,6 +7,8 @@
 
 package com.example.ipmedt;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public final class R {
     public static final class anim {
         public static final int abc_fade_in=0x7f040000;
@@ -1088,8 +1090,9 @@ containing a value of this type.
         public static final int book_small=0x7f020059;
         public static final int button=0x7f02005a;
         public static final int ic_launcher=0x7f02005b;
-        public static final int menu_bedrijven=0x7f02005c;
-        public static final int progressbar2=0x7f02005d;
+        public static final int logohsl=0x7f02005c;
+        public static final int menu_bedrijven=0x7f02005d;
+        public static final int progressbar2=0x7f02005e;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f050042;
@@ -1107,15 +1110,12 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f050024;
         public static final int action_settings=0x7f050055;
         public static final int activity_chooser_view_content=0x7f050025;
-        public static final int activity_splash_progress_bar=0x7f050040;
+        public static final int activity_splash_progress_bar=0x7f050041;
         public static final int always=0x7f05000b;
         public static final int auteur=0x7f050051;
         public static final int beginning=0x7f050011;
         public static final int btnDelete=0x7f050049;
         public static final int btnSave=0x7f050048;
-        public static final int button_buy=0x7f05003f;
-        public static final int button_information=0x7f05003d;
-        public static final int button_models=0x7f05003e;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;
@@ -1131,9 +1131,10 @@ containing a value of this type.
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
-        public static final int imageView1=0x7f050041;
+        public static final int imageView1=0x7f050040;
         public static final int imageView2=0x7f050044;
         public static final int info=0x7f05004c;
+        public static final int information=0x7f05003e;
         public static final int inputDesc=0x7f050047;
         public static final int inputName=0x7f050045;
         public static final int inputPrice=0x7f050046;
@@ -1141,6 +1142,7 @@ containing a value of this type.
         public static final int list_item=0x7f050029;
         public static final int logo=0x7f05004f;
         public static final int middle=0x7f050012;
+        public static final int models=0x7f05003d;
         public static final int naam=0x7f05004e;
         public static final int naamsubbeschrijving=0x7f050052;
         public static final int naamsubmodel=0x7f050050;
@@ -1152,6 +1154,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
+        public static final int sale=0x7f05003f;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
         public static final int search_button=0x7f050033;
@@ -1179,6 +1182,7 @@ containing a value of this type.
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
+		public static final int buynow = 0;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1250,6 +1254,7 @@ containing a value of this type.
         public static final int sustainmodel_list=0x7f030029;
         public static final int sustainmodels=0x7f03002a;
         public static final int test_list=0x7f03002b;
+		public static final XmlPullParser salefragment = null;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
