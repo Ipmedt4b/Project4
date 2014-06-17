@@ -33,7 +33,7 @@ public class Main extends Activity {
 	{
 		final Context context = this;
 		//de knop voor de informatie
-		information = (Button) findViewById(R.id.information);
+		information = (Button) findViewById(R.id.button_information);
 		information.setOnClickListener(new OnClickListener()
 		{
 			@Override
@@ -44,14 +44,10 @@ public class Main extends Activity {
 			}
 		});
 		//de knop om het boek te kopen
-<<<<<<< HEAD
 
 		
 		book = (Button) findViewById(R.id.button_sales);
 
-=======
-		book = (Button) findViewById(R.id.sale);
->>>>>>> f7ecedffe41e9daa455d4889c43eeed4f858f596
 		book.setOnClickListener(new OnClickListener() 
 		{
 			@Override
@@ -64,7 +60,7 @@ public class Main extends Activity {
 		
 		
 		//de knop voor de modellen
-		models = (Button) findViewById(R.id.models);
+		models = (Button) findViewById(R.id.button_models);
 		models.setOnClickListener(new OnClickListener() 
 		{
 			@Override
