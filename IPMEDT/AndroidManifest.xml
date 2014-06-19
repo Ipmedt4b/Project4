@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
 
-
-        
-            <activity android:name="com.example.ipmedt.DetailModel" android:screenOrientation="portrait" />
+       
+		
+        	<activity android:name="com.example.ipmedt.DetailModel" android:screenOrientation="portrait" />
             
             <activity android:name="com.example.ipmedt.sustainability.Sustainability" android:screenOrientation="portrait" />
             <activity android:name="com.example.ipmedt.sustainability.Sustainability_model1" android:screenOrientation="portrait" />
@@ -122,17 +122,20 @@
             </intent-filter>
         </activity>
                
-       <activity android:name=".New" />
+       
         <activity
             android:name="com.example.ipmedt.InformationFragment"
             android:screenOrientation="portrait">            
         </activity>
         
-         <activity android:name=".New1" />
+        
         <activity
             android:name="com.example.ipmedt.SeModelFragment"
             android:screenOrientation="portrait">            
         </activity>
+        
+      
+          
         
        
         

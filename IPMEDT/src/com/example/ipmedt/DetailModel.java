@@ -23,7 +23,7 @@ public class DetailModel extends Activity
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.model_list);	
+		setContentView(R.layout.models);	
 		
 		detailinformatie = (TextView) findViewById(R.id.textView1);
 		setInfo(modelID);

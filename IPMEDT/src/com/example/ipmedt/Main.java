@@ -16,6 +16,7 @@ public class Main extends Activity {
 	Button information;
 	Button book;
 	Button models;
+	Button quiz;
 	
 	
 	@Override
@@ -70,6 +71,9 @@ public class Main extends Activity {
                 startActivity(intent); 
 			}
 		});	
+		
+		
+		
 
 		
 		
